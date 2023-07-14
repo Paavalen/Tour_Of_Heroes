@@ -10,6 +10,7 @@ import { MessagesComponent } from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
