@@ -1,21 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-abilities',
   templateUrl: './hero-abilities.component.html',
-  styleUrls: ['./hero-abilities.component.css']
+  styleUrls: [ './hero-abilities.component.css' ]
 })
 export class HeroAbilitiesComponent implements OnInit {
-  abilities: string[];
+  @Input()hero: Hero | undefined;
+  ability: string |undefined ;
 
-  constructor(){
-    this.abilities=[];
+  constructor(private heroService: HeroService) {}
+
+  ngOnInit(): void {
+   // this.fetchAbility();
   }
-  ngOnInit(){
-    this.getHeroAbilities();
-  }
-  getHeroAbilities(){
-    this.abilities=this.hero.abilities;
+
+  fetchAbility(): void {
+    if (this.hero) {
+      this.heroService.getHeroAbility(this.hero.id).subscribe((ability) => {
+        this.ability = ability;
+      });
+    }
   }
 }
+

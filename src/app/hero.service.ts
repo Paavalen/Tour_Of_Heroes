@@ -42,6 +42,17 @@ export class HeroService {
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
+
+  
+
+  getHeroAbility(id: number): Observable<string> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      map((hero) => hero.ability),
+      catchError(this.handleError<string>(`getHeroAbility id=${id}`))
+    );
+  }
+
       /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -88,7 +99,7 @@ export class HeroService {
       catchError(this.handleError<Hero>('deleteHero'))
     );
     }
-    
+
     /* GET heroes whose name contains search term */
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
@@ -102,6 +113,7 @@ export class HeroService {
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
+
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
