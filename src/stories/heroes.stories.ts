@@ -1,3 +1,4 @@
+import { Component } from '@angular/core';
 import { moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { HeroesComponent } from '../app/heroes/heroes.component';
@@ -23,7 +24,7 @@ export default {
       providers: [{ provide: HeroService, useValue: mockHeroService }],
     }),
   ],
-
+  component: HeroesComponent,
 };
 
 export const Default = () => ({
