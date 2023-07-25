@@ -13,7 +13,7 @@ const mockHeroService = {
     { id: 3, name: 'Hero 3' },
   ]),
   addHero: (hero: Hero) => of({ ...hero, id: 4 }),
-  deleteHero: (id: number) => of(),
+  deleteHero: (hero: Hero) => of(),
 };
 
 export default {
