@@ -22,6 +22,7 @@
     "@angular/router": "^16.1.0",
     "angular-in-memory-web-api": "^0.16.0",
     "rxjs": "~7.8.0",
+    "storybook-addon-angular-router": "^1.9.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -32,6 +33,7 @@
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/addon-interactions": "^7.1.1",
     "@storybook/addon-links": "^7.1.1",
+    "@storybook/addon-mdx-gfm": "^7.1.1",
     "@storybook/angular": "^7.1.1",
     "@storybook/blocks": "^7.1.1",
     "@storybook/testing-library": "^0.2.0",
@@ -45,6 +47,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.1.1",
+    "storybook-addon-compodoc": "^1.0.2",
     "typescript": "~5.1.3"
   }
 }
